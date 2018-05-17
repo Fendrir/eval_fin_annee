@@ -104,28 +104,5 @@ class Film
     {
         return $this->getFilmName();
     }
-
-    /**
-     * Set actors
-     *
-     * @param \AppBundle\Entity\Actor $actors
-     *
-     * @return Film
-     */
-    public function setActors(\AppBundle\Entity\Actor $actors = null)
-    {
-        $this->actors = $actors;
-
-        return $this;
-    }
-
-    /**
-     * Get actors
-     *
-     * @return \AppBundle\Entity\Actor
-     */
-    public function getActors()
-    {
-        return $this->actors;
-    }
 }
+
