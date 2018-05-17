@@ -15,35 +15,35 @@ class Film
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="film_id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $filmId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="filmName", type="string", length=255)
+     * @ORM\Column(name="film_name", type="string", length=255)
      */
     private $filmName;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="year", type="integer")
+     * @ORM\Column(name="film_year", type="integer")
      */
-    private $year;
+    private $filmYear;
 
 
     /**
-     * Get id
+     * Get filmId
      *
      * @return int
      */
-    public function getId()
+    public function getFilmId()
     {
-        return $this->id;
+        return $this->filmId;
     }
 
     /**
@@ -71,27 +71,27 @@ class Film
     }
 
     /**
-     * Set year
+     * Set filmYear
      *
-     * @param integer $year
+     * @param integer $filmYear
      *
      * @return Film
      */
-    public function setYear($year)
+    public function setFilmYear($filmYear)
     {
-        $this->year = $year;
+        $this->filmYear = $filmYear;
 
         return $this;
     }
 
     /**
-     * Get year
+     * Get filmYear
      *
      * @return int
      */
-    public function getYear()
+    public function getFilmYear()
     {
-        return $this->year;
+        return $this->filmYear;
     }
 }
 

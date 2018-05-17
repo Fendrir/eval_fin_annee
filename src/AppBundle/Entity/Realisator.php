@@ -15,83 +15,83 @@ class Realisator
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="rea_id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $reaId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="rea_name", type="string", length=255)
      */
-    private $name;
+    private $reaName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=255)
+     * @ORM\Column(name="rea_firstname", type="string", length=255)
      */
-    private $firstname;
+    private $reaFirstName;
 
 
     /**
-     * Get id
+     * Get reaId
      *
      * @return int
      */
-    public function getId()
+    public function getReaId()
     {
-        return $this->id;
+        return $this->reaId;
     }
 
     /**
-     * Set name
+     * Set reaName
      *
-     * @param string $name
+     * @param string $reaName
      *
      * @return Realisator
      */
-    public function setName($name)
+    public function setReaName($reaName)
     {
-        $this->name = $name;
+        $this->reaName = $reaName;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get reaName
      *
      * @return string
      */
-    public function getName()
+    public function getReaName()
     {
-        return $this->name;
+        return $this->reaName;
     }
 
     /**
-     * Set firstname
+     * Set reaFirstname
      *
-     * @param string $firstname
+     * @param string $reaFirstname
      *
      * @return Realisator
      */
-    public function setFirstname($firstname)
+    public function setReaFirstname($reaFirstName)
     {
-        $this->firstname = $firstname;
+        $this->reaFirstName = $reaFirstName;
 
         return $this;
     }
 
     /**
-     * Get firstname
+     * Get reaFirstname
      *
      * @return string
      */
-    public function getFirstname()
+    public function getReaFirstname()
     {
-        return $this->firstname;
+        return $this->reaFirstName;
     }
 }
 
