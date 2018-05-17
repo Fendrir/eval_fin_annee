@@ -4,4 +4,30 @@
     
 coucou je suis enfin up
 
+<h1>ma liste de films</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nom du Film</th>
+            <th>Année du Film</th>
+            <th>Réalisateur</th>
+            <th>Acteurs</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for film in films %}
+            <tr>
+                <td class="text-center">{{ film.filmName }}</td>
+                <td class="text-center">{{ film.filmYear }}</td>
+                <td class="text-center"></td>
+                {% for actor in film.actors %}
+                <td class="text-center">{{ actor.actorName }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 {% endblock %}

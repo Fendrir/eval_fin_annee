@@ -91,7 +91,7 @@ class Film
      *
      * @return Film
      */
-    public function addPassager(\AppBundle\Entity\Actor $actor)
+    public function addActor(\AppBundle\Entity\Actor $actor)
     {
         $this->actors[] = $actor;
 
@@ -103,7 +103,7 @@ class Film
      *
      * @param \AppBundle\Entity\Actor $actor
      */
-    public function removePassager(\AppBundle\Entity\Actor $actor)
+    public function removeActor(\AppBundle\Entity\Actor $actor)
     {
         $this->actors->removeElement($actor);
     }
