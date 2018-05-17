@@ -43,15 +43,6 @@ class Actor
      */
     private $actorAge;
     
-    /**
-     * @ORM\OneToMany(targetEntity="Film", mappedBy="actors")
-     */
-    private $films;
-
-    public function __construct()
-    {
-        $this->films = new ArrayCollection();
-    }
 
     /**
      * Get id

@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Realisator
@@ -34,6 +35,16 @@ class Realisator
      * @ORM\Column(name="rea_firstname", type="string", length=255)
      */
     private $reaFirstName;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Film", mappedBy="realisator")
+     */
+    private $films;
+
+    public function __construct()
+    {
+        $this->films = new ArrayCollection();
+    }
 
 
     /**

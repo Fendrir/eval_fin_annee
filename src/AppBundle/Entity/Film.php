@@ -36,11 +36,77 @@ class Film
     private $filmYear;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Actor", inversedBy="films")
-     * @ORM\JoinColumn(name="actor_id", referencedColumnName="actor_id")
+     * @ORM\ManyToOne(targetEntity="Realisator", inversedBy="films")
+     * @ORM\JoinColumn(name="rea_id", referencedColumnName="rea_id")
+     */
+    private $realisator;
+
+    /**
+     * Many Actors have Many Films.
+     * @ORM\ManyToMany(targetEntity="Actor")
+     * @ORM\JoinTable(name="film_actor",
+     *      joinColumns={@ORM\JoinColumn(name="film_id", referencedColumnName="film_id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="actor_id", referencedColumnName="actor_id")}
+     *      )
      */
     private $actors;
 
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->actors = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get actors
+     * 
+     * @return int
+     */
+    public function getActors()
+    {
+        return $this->actors;
+    }
+
+    /**
+     * Set actors
+     *
+     * @param \AppBundle\Entity\Actor $actor
+     *
+     * @return Film
+     */
+    public function setActors(\AppBundle\Entity\Actor $actor)
+    {
+        $this->actors = $actor;
+
+        return $this;
+    }
+
+    /**
+     * Add actors
+     *
+     * @param \AppBundle\Entity\Actor $actor
+     *
+     * @return Film
+     */
+    public function addPassager(\AppBundle\Entity\Actor $actor)
+    {
+        $this->actors[] = $actor;
+
+        return $this;
+    }
+
+    /**
+     * Remove actor
+     *
+     * @param \AppBundle\Entity\Actor $actor
+     */
+    public function removePassager(\AppBundle\Entity\Actor $actor)
+    {
+        $this->actors->removeElement($actor);
+    }
 
     /**
      * Get filmId
@@ -105,27 +171,4 @@ class Film
         return $this->getFilmName();
     }
 
-    /**
-     * Set actors
-     *
-     * @param \AppBundle\Entity\Actor $actors
-     *
-     * @return Film
-     */
-    public function setActors(\AppBundle\Entity\Actor $actors = null)
-    {
-        $this->actors = $actors;
-
-        return $this;
-    }
-
-    /**
-     * Get actors
-     *
-     * @return \AppBundle\Entity\Actor
-     */
-    public function getActors()
-    {
-        return $this->actors;
-    }
 }
